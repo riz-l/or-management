@@ -19,8 +19,8 @@ import Sbar from "../../subPages/Sbar/Sbar.component";
 // Page: Home
 function Home() {
   // State = selectedPatient, selectedPatientData
-  const [selectedPatient, setSelectedPatient] = useState("");
-  const [selectedPatientData, setSelectedPatientData] = useState(null);
+  const [selectedPatient, setSelectedPatient] = useState(null);
+  const [selectedPatientData, setSelectedPatientData] = useState([]);
 
   // When selectedPatient changes
   // Fetch selected Patient data from OneResponse API
@@ -28,20 +28,25 @@ function Home() {
   // If unsuccessful, catch error
   useEffect(() => {
     async function getSelectedPatientData() {
-      if (selectedPatient !== "") {
+      if (selectedPatient !== null) {
         try {
           const oneResponseAPI = `https://cad-message-to-trust-test.azurewebsites.net/PatientDetails/ePRID/${selectedPatient}`;
           const response = await fetch(oneResponseAPI);
-          const patientData = await response.json();
-          setSelectedPatientData(patientData);
+          const data = await response.json();
+          console.log("getSelectedPatientData data: ", data);
+          console.log(
+            "getSelectedPatientData (Is it an array?)",
+            Array.isArray(data)
+          );
+          setSelectedPatientData(data);
         } catch (error) {
-          throw new Error("Selected Patient data unavailable");
+          throw new Error("Patient data unavailable");
         }
       }
     }
 
     getSelectedPatientData();
-  }, [selectedPatient]); // If selectedPatient changes, data fetch from OneResponse API runs again
+  }, [selectedPatient]);
 
   // Render Home code
   return (

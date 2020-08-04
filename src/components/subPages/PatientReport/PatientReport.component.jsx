@@ -11,111 +11,87 @@ import SubPageField from "../../UI/subPageComponents/SubPageField/SubPageField.c
 
 // subPage: PatientReport
 function PatientReport({ selectedPatient, selectedPatientData }) {
-  // Render PatientReport code
-  return (
-    <div className="PatientReport">
-      <SubPageHeader icon="fas fa-file-medical-alt" text="Patient Report" />
-      {selectedPatient && selectedPatientData ? (
-        <div className="PatientReport__layout">
+  // Maps data properties in selectedPatientData
+  const currentPatientRender = selectedPatientData.map(
+    ({
+      Master_ePR_ID,
+      PD_Firstname,
+      PD_Surname,
+      PD_DOB,
+      PD_Age_Yrs,
+      PD_Age_Mths,
+      PD_Gender,
+      PD_NHS_No,
+      PD_Ethnicity,
+      PD_Weight,
+      PD_Telephone,
+      PD_Housenum,
+      PD_Add1,
+      PD_Add2,
+      PD_Add3,
+      PD_Postcode,
+      PD_Patient_Allergy,
+      PD_Allergy,
+      PD_Patient_Meds,
+      PD_Medication,
+    }) => (
+      <div>
+        <div className="PatientReport__layout" key={Master_ePR_ID}>
           <div className="PatientReport__layout-col-1">
             <SubPageSubHeader text="Patient Details" />
             <SubPageField
               fieldTitle="Forename"
-              fieldData={
-                selectedPatientData.PD_Firstname
-                  ? selectedPatientData.PD_Firstname
-                  : "Not recorded"
-              }
+              fieldData={PD_Firstname ? PD_Firstname : "Not recorded"}
             />
             <SubPageField
               fieldTitle="Surname"
-              fieldData={
-                selectedPatientData.PD_Surname
-                  ? selectedPatientData.PD_Surname
-                  : "Not recorded"
-              }
+              fieldData={PD_Surname ? PD_Surname : "Not recorded"}
             />
             <SubPageField
               fieldTitle="Date of Birth"
-              fieldData={
-                selectedPatientData.PD_DOB
-                  ? selectedPatientData.PD_DOB
-                  : "Not recorded"
-              }
+              fieldData={PD_DOB ? PD_DOB : "Not recorded"}
             />
             <SubPageField
               fieldTitle="Age (Years)"
-              fieldData={
-                selectedPatientData.PD_Age_Yrs
-                  ? selectedPatientData.PD_Age_Yrs
-                  : "Not recorded"
-              }
+              fieldData={PD_Age_Yrs ? PD_Age_Yrs : "Not recorded"}
             />
             <SubPageField
               fieldTitle="Age (Months)"
-              fieldData={
-                selectedPatientData.PD_Age_Mths
-                  ? selectedPatientData.PD_Age_Mths
-                  : "Not recorded"
-              }
+              fieldData={PD_Age_Mths ? PD_Age_Mths : "Not recorded"}
             />
             <SubPageField
               fieldTitle="Gender"
-              fieldData={
-                selectedPatientData.PD_Gender
-                  ? selectedPatientData.PD_Gender
-                  : "Not recorded"
-              }
+              fieldData={PD_Gender ? PD_Gender : "Not recorded"}
             />
             <SubPageField
               fieldTitle="NHS Number"
-              fieldData={
-                selectedPatientData.PD_NHS_No
-                  ? selectedPatientData.PD_NHS_No
-                  : "Not recorded"
-              }
+              fieldData={PD_NHS_No ? PD_NHS_No : "Not recorded"}
             />
             <SubPageField
               fieldTitle="Ethnicity"
-              fieldData={
-                selectedPatientData.PD_Ethnicity
-                  ? selectedPatientData.PD_Ethnicity
-                  : "Not recorded"
-              }
+              fieldData={PD_Ethnicity ? PD_Ethnicity : "Not recorded"}
             />
             <SubPageField
               fieldTitle="Weight (kg)"
-              fieldData={
-                selectedPatientData.PD_Weight
-                  ? selectedPatientData.PD_Weight
-                  : "Not recorded"
-              }
+              fieldData={PD_Weight ? PD_Weight : "Not recorded"}
             />
           </div>
           <div className="PatientReport__layout-col-2">
             {/* Needs to be tested //TODO */}
             <SubPageField
               fieldTitle="Telephone"
-              fieldData={
-                selectedPatientData.PD_Telephone
-                  ? selectedPatientData.PD_Telephone
-                  : "Not recorded"
-              }
+              fieldData={PD_Telephone ? PD_Telephone : "Not recorded"}
             />
             <SubPageField
               fieldTitle="Address"
               fieldData={
-                selectedPatientData.PD_Housenum ||
-                selectedPatientData.PD_Add1 ||
-                selectedPatientData.PD_Add2 ||
-                selectedPatientData.PD_Add3 ||
-                selectedPatientData.PD_Postcode ? (
+                PD_Housenum || PD_Add1 || PD_Add2 || PD_Add3 || PD_Postcode ? (
                   <div>
-                    {selectedPatientData.PD_Housenum}
-                    {selectedPatientData.PD_Add1}
-                    {selectedPatientData.PD_Add2}
-                    {selectedPatientData.PD_Add3}
-                    {selectedPatientData.PD_Postcode}
+                    {PD_Housenum}
+                    {PD_Add1}
+                    {PD_Add2}
+                    {PD_Add3}
+                    {PD_Postcode}
                   </div>
                 ) : (
                   "Not recorded"
@@ -125,34 +101,20 @@ function PatientReport({ selectedPatient, selectedPatientData }) {
             <SubPageField
               fieldTitle="Does the Patient have allergies?"
               fieldData={
-                selectedPatientData.PD_Patient_Allergy
-                  ? selectedPatientData.PD_Patient_Allergy
-                  : "Not recorded"
+                PD_Patient_Allergy ? PD_Patient_Allergy : "Not recorded"
               }
             />
             <SubPageField
               fieldTitle="Allergies"
-              fieldData={
-                selectedPatientData.PD_Allergy
-                  ? selectedPatientData.PD_Allergy
-                  : "Not recorded"
-              }
+              fieldData={PD_Allergy ? PD_Allergy : "Not recorded"}
             />
             <SubPageField
               fieldTitle="Does the Patient take medication?"
-              fieldData={
-                selectedPatientData.PD_Patient_Meds
-                  ? selectedPatientData.PD_Patient_Meds
-                  : "Not recorded"
-              }
+              fieldData={PD_Patient_Meds ? PD_Patient_Meds : "Not recorded"}
             />
             <SubPageField
               fieldTitle="Medications"
-              fieldData={
-                selectedPatientData.PD_Medication
-                  ? selectedPatientData.PD_Medication
-                  : "Not recorded"
-              }
+              fieldData={PD_Medication ? PD_Medication : "Not recorded"}
             />
           </div>
           <div className="PatientReport__layout-col-3">
@@ -160,63 +122,43 @@ function PatientReport({ selectedPatient, selectedPatientData }) {
             <SubPageSubHeader text="Next of Kin" />
             <SubPageField
               fieldTitle="Forename"
-              fieldData={
-                selectedPatientData.PD_Weight
-                  ? selectedPatientData.PD_Weight
-                  : "Not recorded"
-              }
+              fieldData={PD_Weight ? PD_Weight : "Not recorded"}
             />
             <SubPageField
               fieldTitle="Surname"
-              fieldData={
-                selectedPatientData.PD_Weight
-                  ? selectedPatientData.PD_Weight
-                  : "Not recorded"
-              }
+              fieldData={PD_Weight ? PD_Weight : "Not recorded"}
             />
             <SubPageField
               fieldTitle="Relationship to Patient"
-              fieldData={
-                selectedPatientData.PD_Weight
-                  ? selectedPatientData.PD_Weight
-                  : "Not recorded"
-              }
+              fieldData={PD_Weight ? PD_Weight : "Not recorded"}
             />
             <SubPageField
               fieldTitle="Contact Number"
-              fieldData={
-                selectedPatientData.PD_Weight
-                  ? selectedPatientData.PD_Weight
-                  : "Not recorded"
-              }
+              fieldData={PD_Weight ? PD_Weight : "Not recorded"}
             />
             <SubPageField
               fieldTitle="GP Surgery Name"
-              fieldData={
-                selectedPatientData.PD_Weight
-                  ? selectedPatientData.PD_Weight
-                  : "Not recorded"
-              }
+              fieldData={PD_Weight ? PD_Weight : "Not recorded"}
             />
             <SubPageField
               fieldTitle="GP Surgery Address"
-              fieldData={
-                selectedPatientData.PD_Weight
-                  ? selectedPatientData.PD_Weight
-                  : "Not recorded"
-              }
+              fieldData={PD_Weight ? PD_Weight : "Not recorded"}
             />
             <SubPageField
               fieldTitle="Other"
-              fieldData={
-                selectedPatientData.PD_Weight
-                  ? selectedPatientData.PD_Weight
-                  : "Not recorded"
-              }
+              fieldData={PD_Weight ? PD_Weight : "Not recorded"}
             />
           </div>
         </div>
-      ) : null}
+      </div>
+    )
+  );
+
+  // Render PatientReport code
+  return (
+    <div className="PatientReport">
+      <SubPageHeader icon="fas fa-file-medical-alt" text="Patient Report" />
+      {selectedPatient === null ? null : currentPatientRender}
     </div>
   );
 }
