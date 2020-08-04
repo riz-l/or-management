@@ -1,0 +1,54 @@
+/*#region UI: Header */
+.Header {
+  display: grid;
+  grid-template-areas:
+    "primary-header"
+    "secondary-header";
+  grid-template-rows: 60px 40px;
+
+  .Header__primary {
+    align-items: center;
+    background: #569fd3;
+    display: flex;
+    grid-area: primary-header;
+    justify-content: space-between;
+    width: 100%;
+
+    .Header__logo-container {
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+      padding: 1rem;
+    }
+
+    .Header__userdetails-containter {
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+      padding: 1rem;
+    }
+  }
+
+  .Header__secondary {
+    align-items: center;
+    background: #2c2c2c;
+    color: white;
+    display: flex;
+    grid-area: secondary-header;
+    justify-content: space-between;
+    text-transform: uppercase;
+    width: 100%;
+
+    .Header__patient-list-toggle {
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      padding: 1rem;
+    }
+
+    & span {
+      padding: 1rem;
+    }
+  }
+}
+/*#endregion /UI: Header */

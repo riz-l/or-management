@@ -1,0 +1,19 @@
+/*#region subPageComponent: SubPageField */
+.SubPageField {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0.4rem;
+  width: 100%;
+
+  .SubPageField__title {
+    color: #777879;
+  }
+
+  .SubPageField__data {
+    color: #2c2c2c;
+    font-weight: 600;
+  }
+}
+/*#endregion /subPageComponent: SubPageField */

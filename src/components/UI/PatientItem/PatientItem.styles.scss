@@ -1,0 +1,54 @@
+/*#region UI: PatientItem */
+.PatientItem {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  justify-content: flex-start;
+  padding: 0.6rem 1rem;
+  width: 100%;
+  transition: all 500ms ease-in-out;
+  -webkit-transition: all 500ms ease-in-out;
+
+  &:hover {
+    background: #2c2c2c;
+    cursor: pointer;
+    transition: background 200ms ease-in-out;
+  }
+
+  &:hover .PatientItem__icon {
+    background: #414141;
+    border-radius: 10px;
+    transition: all 500ms ease-in-out;
+  }
+
+  .PatientItem__icon {
+    align-items: center;
+    display: flex;
+    background: #2c2c2c;
+    border-radius: 50%;
+    color: white;
+    font-size: 1.2rem;
+    height: 40px;
+    justify-content: center;
+    padding: 0.8rem;
+    width: 40px;
+  }
+
+  .PatientItem__name {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    letter-spacing: 0.8px;
+    margin-left: 2rem;
+    padding: 0.4rem;
+    width: 100%;
+
+    .PatientItem__name-undisclosed {
+      font-weight: lighter;
+      opacity: 0.6;
+    }
+  }
+}
+/*#endregion /UI: PatientItem */

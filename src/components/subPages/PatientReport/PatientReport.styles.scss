@@ -1,0 +1,43 @@
+/*#region subPage: PatientReport */
+.PatientReport {
+  background: white;
+  border-radius: 8px;
+  height: auto;
+  margin: 2rem;
+  padding: 1rem;
+
+  .PatientReport__layout {
+    display: grid;
+    grid-template-areas: "col-1 col-2 col-3";
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+
+    .PatientReport__layout-col-1 {
+      grid-area: col-1;
+
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    .PatientReport__layout-col-2 {
+      grid-area: col-2;
+
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    .PatientReport__layout-col-3 {
+      grid-area: col-3;
+
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+  }
+}
+/*#endregion /subPage: PatientReport */
