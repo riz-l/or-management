@@ -3,7 +3,8 @@
   display: grid;
   grid-template-areas: "patient-list patient-report";
   grid-template-columns: 300px 1fr;
-  min-height: 100vh;
+  min-height: 89.5vh;
+  max-height: 89.5vh;
 
   .Home__patientlist {
     background: #414141;

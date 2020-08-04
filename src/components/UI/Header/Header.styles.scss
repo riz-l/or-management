@@ -4,7 +4,8 @@
   grid-template-areas:
     "primary-header"
     "secondary-header";
-  grid-template-rows: 60px 40px;
+  // grid-template-rows: 60px 40px;
+  grid-template-rows: 6.5vh 4vh;
 
   .Header__primary {
     align-items: center;

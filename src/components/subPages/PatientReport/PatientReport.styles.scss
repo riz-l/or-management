@@ -2,9 +2,10 @@
 .PatientReport {
   background: white;
   border-radius: 8px;
-  height: auto;
+  max-height: 60vh;
   margin: 2rem;
   padding: 1rem;
+  overflow-y: scroll;
 
   .PatientReport__layout {
     display: grid;
