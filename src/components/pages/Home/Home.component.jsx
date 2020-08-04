@@ -62,9 +62,17 @@ function Home() {
           />
           <ReportHeader />
           <Switch>
-            <Route path="/sbar" component={Sbar} />
+            <Route path="/sbar">
+              <Sbar
+                selectedPatient={selectedPatient}
+                selectedPatientData={selectedPatientData}
+              />
+            </Route>
             <Route path="/patient-report">
-              <PatientReport selectedPatientData={selectedPatientData} />
+              <PatientReport
+                selectedPatient={selectedPatient}
+                selectedPatientData={selectedPatientData}
+              />
             </Route>
             <Route path="/notes" component={Notes} />
             <Route path="/media" component={Media} />

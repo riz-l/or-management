@@ -35,9 +35,9 @@ function PatientReport({ selectedPatient, selectedPatientData }) {
       PD_Patient_Meds,
       PD_Medication,
     }) => (
-      <div>
-        <div className="PatientReport__layout" key={Master_ePR_ID}>
-          <div className="PatientReport__layout-col-1">
+      <div key={Master_ePR_ID}>
+        <div className="PatientReport__container">
+          <div className="PatientReport__container-section">
             <SubPageSubHeader text="Patient Details" />
             <SubPageField
               fieldTitle="Forename"
@@ -76,8 +76,7 @@ function PatientReport({ selectedPatient, selectedPatientData }) {
               fieldData={PD_Weight ? PD_Weight : "Not recorded"}
             />
           </div>
-          <div className="PatientReport__layout-col-2">
-            {/* Needs to be tested //TODO */}
+          <div className="PatientReport__container-section">
             <SubPageField
               fieldTitle="Telephone"
               fieldData={PD_Telephone ? PD_Telephone : "Not recorded"}
@@ -117,8 +116,7 @@ function PatientReport({ selectedPatient, selectedPatientData }) {
               fieldData={PD_Medication ? PD_Medication : "Not recorded"}
             />
           </div>
-          <div className="PatientReport__layout-col-3">
-            {/* Next of Kin //TODO */}
+          <div className="PatientReport__container-section">
             <SubPageSubHeader text="Next of Kin" />
             <SubPageField
               fieldTitle="Forename"
