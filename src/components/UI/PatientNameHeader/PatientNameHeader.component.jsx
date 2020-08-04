@@ -14,21 +14,35 @@ function PatientNameHeader({ selectedPatient, selectedPatientData }) {
     ({ Master_ePR_ID, PD_Firstname, PD_Surname }) => (
       <div className="PatientNameHeader" key={Master_ePR_ID}>
         <div className="PatientNameHeader__name-container">
-          <span className="PatientNameHeader__pre-text">Patient Name:</span>
-          <span className="PatientNameHeader__patient-name">
-            {PD_Firstname ? (
-              PD_Firstname
-            ) : (
-              <span className="PatientNameHeader__placeholder">Forename</span>
-            )}
-          </span>
-          <span className="PatientNameHeader__patient-name">
-            {PD_Surname ? (
-              PD_Surname
-            ) : (
-              <span className="PatientNameHeader__placeholder">Surname</span>
-            )}
-          </span>
+          <div className="PatientNameHeader__name-container-row">
+            <span className="PatientNameHeader__pre-text">Patient Name:</span>
+            <span className="PatientNameHeader__patient-name">
+              {PD_Firstname ? (
+                PD_Firstname
+              ) : (
+                <span className="PatientNameHeader__placeholder">Forename</span>
+              )}
+            </span>
+            <span className="PatientNameHeader__patient-name">
+              {PD_Surname ? (
+                PD_Surname
+              ) : (
+                <span className="PatientNameHeader__placeholder">Surname</span>
+              )}
+            </span>
+          </div>
+          <div className="PatientNameHeader__master-epr-id">
+            <span>Master ePR ID:</span>
+            <span className="PatientNameHeader__patient-id">
+              {Master_ePR_ID ? (
+                Master_ePR_ID
+              ) : (
+                <span className="PatientNameHeader__patient-id-placeholder">
+                  No Master_ePR_ID
+                </span>
+              )}
+            </span>
+          </div>
         </div>
       </div>
     )

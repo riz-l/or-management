@@ -25,29 +25,51 @@
   padding: 1rem;
 
   .PatientNameHeader__name-container {
-    align-items: center;
+    align-items: flex-start;
     display: flex;
     justify-content: center;
+    flex-direction: column;
 
-    .PatientNameHeader__pre-text {
-      color: #2c2c2c;
-      font-size: 2.2rem;
-      font-weight: lighter;
-      letter-spacing: 1.4px;
-    }
+    .PatientNameHeader__name-container-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
-    .PatientNameHeader__patient-name {
-      color: #414141;
-      font-size: 2.2rem;
-      font-weight: 600;
-      letter-spacing: 1.4px;
-      margin-left: 1rem;
+      .PatientNameHeader__pre-text {
+        color: #2c2c2c;
+        font-size: 2.2rem;
+        font-weight: lighter;
+        letter-spacing: 1.4px;
+      }
 
-      .PatientNameHeader__placeholder {
+      .PatientNameHeader__patient-name {
         color: #414141;
         font-size: 2.2rem;
-        font-weight: 300;
+        font-weight: 600;
         letter-spacing: 1.4px;
+        margin-left: 1rem;
+
+        .PatientNameHeader__placeholder {
+          color: #414141;
+          font-size: 2.2rem;
+          font-weight: 300;
+          letter-spacing: 1.4px;
+        }
+      }
+    }
+
+    .PatientNameHeader__master-epr-id {
+      color: #2c2c2c;
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+
+      .PatientNameHeader__patient-id {
+        color: #414141;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        margin-left: 1rem;
       }
     }
   }
