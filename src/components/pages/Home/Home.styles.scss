@@ -19,12 +19,4 @@
   }
 }
 
-/*#region Media Queries */
-@media screen and (max-width: 1284px) {
-  .Home {
-    grid-template-areas: "patient-report patient-list";
-    grid-template-columns: 1fr 300px;
-  }
-}
-/*#endregion /Media Queries */
 /*#endregion /Page: Home */

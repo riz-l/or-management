@@ -41,31 +41,20 @@
 
     .Header__patient-list-toggle {
       align-items: center;
+      cursor: pointer;
       display: flex;
       justify-content: center;
+      height: 100%;
     }
 
     & i {
-      cursor: pointer;
       font-size: 1.4rem;
-      padding: 1rem;
+      margin: 0 1rem;
     }
 
     & span {
-      padding: 1rem;
+      margin-right: 1rem;
     }
   }
 }
-
-/*#region Media Queries */
-@media screen and (min-width: 1284px) {
-  .Header {
-    .Header__secondary {
-      .Header__patient-list-toggle {
-        display: none;
-      }
-    }
-  }
-}
-/*#endregion /Media Queries */
 /*#endregion /UI: Header */
