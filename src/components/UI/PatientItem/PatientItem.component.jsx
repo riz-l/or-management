@@ -8,7 +8,13 @@ import "./PatientItem.styles.scss";
 import Icon from "../Icon/Icon.component";
 
 // UI: PatientItem
-function PatientItem({ PD_Firstname, PD_Surname, ePR_CallSign }) {
+function PatientItem({
+  PD_Firstname,
+  PD_Surname,
+  PD_Gender,
+  PD_DOB,
+  ePR_CallSign,
+}) {
   // Render Home code
   return (
     <div className="PatientItem">
@@ -33,6 +39,24 @@ function PatientItem({ PD_Firstname, PD_Surname, ePR_CallSign }) {
               )}
             </span>
           </div>
+          <div className="PatientItem__other-container">
+            <span className="PatientItem_other">
+              {PD_Gender ? (
+                PD_Gender
+              ) : (
+                <span className="PatientItem__other-undisclosed">Gender</span>
+              )}
+            </span>
+            <span className="PatientItem_other">
+              {PD_DOB ? (
+                PD_DOB
+              ) : (
+                <span className="PatientItem__other-undisclosed">
+                  Date of Birth
+                </span>
+              )}
+            </span>
+          </div>
         </div>
         <div className="PatientItem__status">
           <span>
@@ -44,6 +68,7 @@ function PatientItem({ PD_Firstname, PD_Surname, ePR_CallSign }) {
               </span>
             )}
           </span>
+          <span>Status:</span>
         </div>
       </div>
     </div>

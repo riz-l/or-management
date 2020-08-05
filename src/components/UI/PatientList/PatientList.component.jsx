@@ -11,7 +11,7 @@ import PatientItem from "../PatientItem/PatientItem.component";
 function PatientList({ setSelectedPatient }) {
   // State = loading, patients
   const [loading, setLoading] = useState(true);
-  const [patients, setPatients] = useState();
+  const [patients, setPatients] = useState([]);
 
   // When PatientList renders
   // Fetch data from OneResponse API
