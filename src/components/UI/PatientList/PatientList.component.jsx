@@ -25,8 +25,6 @@ function PatientList({ setSelectedPatient }) {
           "https://cad-message-to-trust-test.azurewebsites.net/PatientDetails";
         const response = await fetch(oneResponseAPI);
         const data = await response.json();
-        console.log("getPatientList data: ", data);
-        console.log("getPatientList (Is it an array?)", Array.isArray(data));
         setPatients(data);
       } catch (error) {
         throw new Error("Patient list unavailable");

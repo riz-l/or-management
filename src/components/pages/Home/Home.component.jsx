@@ -33,14 +33,11 @@ function Home() {
           const oneResponseAPI = `https://cad-message-to-trust-test.azurewebsites.net/PatientDetails/ePRID/${selectedPatient}`;
           const response = await fetch(oneResponseAPI);
           const data = await response.json();
-          console.log("getSelectedPatientData data: ", data);
-          console.log(
-            "getSelectedPatientData (Is it an array?)",
-            Array.isArray(data)
-          );
           setSelectedPatientData(data);
         } catch (error) {
-          throw new Error("Patient data unavailable");
+          throw new Error(
+            "Patient data unavailable. Please check your internet connection and/or your firewall permissions."
+          );
         }
       }
     }
