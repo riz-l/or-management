@@ -12,6 +12,7 @@ import Home from "./components/pages/Home/Home.component";
 
 // Component: App
 function App() {
+  // Render App code
   return (
     <div className="App">
       <Header />

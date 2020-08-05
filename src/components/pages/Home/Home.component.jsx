@@ -59,6 +59,12 @@ function Home() {
           />
           <ReportHeader />
           <Switch>
+            <Route exact path="/">
+              <Sbar
+                selectedPatient={selectedPatient}
+                selectedPatientData={selectedPatientData}
+              />
+            </Route>
             <Route path="/sbar">
               <Sbar
                 selectedPatient={selectedPatient}

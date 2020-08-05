@@ -1,8 +1,8 @@
 /*#region UI: ReportHeader */
 .ReportHeader {
-  height: 80px;
   background: transparent;
-  margin: 0;
+  height: auto;
+  margin: 0 1rem;
   position: -webkit-sticky;
   position: sticky;
   top: 0;
@@ -10,7 +10,7 @@
   .ReportHeader__options {
     align-items: center;
     display: flex;
-    height: 100%;
+    height: auto;
     justify-content: flex-start;
     width: 100%;
   }
@@ -22,7 +22,7 @@
     flex-direction: column;
     height: 70px;
     justify-content: center;
-    margin: 2rem;
+    margin: 0 1rem;
     width: 70px;
 
     transition: all 200ms ease-in-out;

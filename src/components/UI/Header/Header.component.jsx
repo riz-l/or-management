@@ -23,11 +23,11 @@ function Header() {
         </div>
       </div>
       <div className="Header__secondary">
-        <div className="Header__patient-list-toggle">
-          <Icon icon="fas fa-bars" />
-          <span>Patient List</span>
-        </div>
         <span>Emergency Department</span>
+        <div className="Header__patient-list-toggle">
+          <span>Patient List</span>
+          <Icon icon="fas fa-bars" />
+        </div>
       </div>
     </div>
   );
